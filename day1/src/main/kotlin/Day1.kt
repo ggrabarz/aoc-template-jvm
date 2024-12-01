@@ -10,7 +10,7 @@ fun part1(): Any {
     val leftLocationIDs = sortedMapOf<Int, Int>()
     val rightLocationIDs = sortedMapOf<Int, Int>()
 
-    input.lines().forEach { line ->
+    input.forEach { line ->
         val (left, right) = line.split("   ")
         leftLocationIDs.put(left.toInt(), leftLocationIDs.computeIfAbsent(left.toInt()) { t -> 0 } + 1)
         rightLocationIDs.put(right.toInt(), rightLocationIDs.computeIfAbsent(right.toInt()) { t -> 0 } + 1)
@@ -32,7 +32,7 @@ fun part2(): Any {
     val leftLocationIDs = mutableListOf<Int>()
     val rightLocationIDs = hashMapOf<Int, Int>()
 
-    input.lines().forEach { line ->
+    input.forEach { line ->
         val (left, right) = line.split("   ")
         leftLocationIDs.add(left.toInt())
         rightLocationIDs.put(right.toInt(), rightLocationIDs.computeIfAbsent(right.toInt()) { t -> 0 } + 1)
@@ -41,9 +41,10 @@ fun part2(): Any {
     return leftLocationIDs.fold(0) { acc, left -> acc + left * rightLocationIDs.getOrDefault(left, 0) }
 }
 
-private val input: String by lazy { readInput() }
+private val inputLazy: String by lazy { readInput() }
+
+private val input: List<String> = inputLazy.lines()
 
 private fun readInput(): String {
     return object {}.javaClass.getResource("Day1.input").readText()
 }
-
