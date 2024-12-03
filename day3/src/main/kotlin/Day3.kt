@@ -6,7 +6,7 @@ fun main() {
 
 fun part1(): Any {
     val numbers = Regex("(\\d+)")
-    val matches = Regex("(mul\\(\\d+,\\d+\\))").findAll(input)
+    val matches = Regex("(mul\\(\\d{1,3},\\d{1,3}\\))").findAll(input)
     return matches.map { stringToMul(numbers, it) }.sum()
 }
 
@@ -16,7 +16,7 @@ fun part2(): Any {
     val DO = "do()"
     val DONT = "don't()"
     val numbers = Regex("(\\d+)")
-    val matches = Regex("(mul\\(\\d+,\\d+\\)|do\\(\\)|don't\\(\\))").findAll(input)
+    val matches = Regex("(mul\\(\\d{1,3},\\d{1,3}\\)|do\\(\\)|don't\\(\\))").findAll(input)
 
     return matches.fold(Result(true, 0)) { result, match ->
         when (match.value) {
