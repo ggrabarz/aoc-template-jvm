@@ -2,6 +2,7 @@ fun main() {
     val fetch = input.length
     println(part1())
     println(part2())
+    System.err.println(fetch)
 }
 
 fun part1(): Any {
