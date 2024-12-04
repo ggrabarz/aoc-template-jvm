@@ -1,1 +1,1 @@
---enable-preview -XX:+UseParallelGC -Xms16m -Xmx16m
+--enable-preview -Xms32m -Xmx32m -XX:+UseParallelGC -XX:ParallelGCThreads=1 -XX:MaxGCPauseMillis=1 -XX:GCTimeRatio=999999
