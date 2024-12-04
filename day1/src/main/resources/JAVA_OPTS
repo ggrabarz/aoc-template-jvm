@@ -1,1 +1,1 @@
---enable-preview -XX:+UseParallelGC -Xms4g -Xmx4g
+--enable-preview -XX:+UseParallelGC -Xms16m -Xmx16m
